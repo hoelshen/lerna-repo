@@ -50,10 +50,10 @@ p.catch(onRejected)
 // generator 的弊端是没有执行器， 本身也不是为流程控制而生的，所以出现了co
 
 // async 函数的执行过程
-generator本意是iterator生成器  函数运行到yield时退出， 并保留上下文
+// generator本意是iterator生成器  函数运行到yield时退出， 并保留上下文
 
 
-co 适用于调用promise 的场景， 
+// co 适用于调用promise 的场景， 
 
 co(function*(){
   var result = yield Promise.resolve(true)
@@ -66,16 +66,16 @@ co(function*(){
 
 
 
-可以在async/await 里面使用 try catch //同步函数
+// 可以在async/await 里面使用 try catch //同步函数
 
 
-await 的用法 大概分为三种
-await + async 
-await + Promise
-await+ co+ generaor
+// await 的用法 大概分为三种
+// await + async 
+// await + Promise
+// await+ co+ generaor
 
 
-await + co + generator 用法
+// await + co + generator 用法
  const co = require('co')
  const Promise = require('bluebird')
 
@@ -86,11 +86,9 @@ await + co + generator 用法
     var result = yield.fs.readFilAsyn('myfiles.js', 'utf8')
     return result;
   })
- 
-
  }
 
- await后面接promise ，promise自身就足够应付所有流程
+//  await后面接promise ，promise自身就足够应付所有流程
 
 
 
