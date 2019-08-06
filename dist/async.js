@@ -21,6 +21,7 @@ function _asyncToGenerator(fn) {
       args = arguments;
     return new Promise(function (resolve, reject) {
       var gen = fn.apply(self, args);
+      console.log('gen: ', gen);
 
       function _next(value) {
         asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
