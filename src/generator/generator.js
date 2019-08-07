@@ -1,5 +1,5 @@
-function *helloWorldGenerator() {
-  yield 'hello';
-  yield 'world';
-  return 'ending';
+function  *hiGenerator() {
+  yield '1';
+  yield '2';
+  return '3';
 }
