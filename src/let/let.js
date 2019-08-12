@@ -111,8 +111,9 @@ var points = [
 ]
 
 points.findIndex(function matcher(point){
-  return {
-    (point.x) % 3 == 0 && point.y % 4 === 0
-  }
+  return 
+  (point.x  % 3 == 0 && point.y % 4 === 0)
+
 })
 
+识别 NaN, -0 值， 那么应该选择Object.is()
