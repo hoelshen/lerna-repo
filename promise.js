@@ -16,8 +16,6 @@ hell('./xx.json').then(function (data) {
     console.log('promise ' + data)
     reslove(data)
   })
-
-
 }).then(function (data) {
   return new Promise(function (reslove, reject) {
     console.log('promise ' + data)
