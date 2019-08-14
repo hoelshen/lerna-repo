@@ -29,7 +29,7 @@ var myAsync = generator => {
   }
 };
 
-myAsync(function*() {
+myAsync( function *() {
   try {
     const a = yield Promise.resolve(1);
     const b = yield Promise.reject(a + 10);

@@ -1,14 +1,24 @@
 
 
+function Defer(executor){
+  this.value = null;//代理的值
 
-function Promise(){
+  if(!(this instanceof Defer)){
+    throw " Defer is a constructor and should be called width 'new' keyword "
+  }
+
+  if(typeof executor !== 'function'){
+    throw ' Defer params must be a function '
+  }
 
 }
 
 
 
+Defer.prototype = {
+  
 
-
+}
 
 
 
@@ -81,17 +91,36 @@ then.call(newValue, function resolve_ (newValue) {
 }, reject_);
 
 
-var p1 = new Promise(function (resolve) {
-  resolve(1);
+
+var p1 = new Defer(function (resolve) {
+  setTimeout(function () {
+    resolve(1);
+  }, 1000);
 })
 
 p1.then(function (val) {
-  var p3 = new Promise(function (resolve) {
-    resolve(val + 1);
+  console.log(val)
+  var p3 = new Defer(function (resolve) {
+    setTimeout(function () {
+      resolve(val + 1);
+    }, 1000);
   });
 
   return p3;
 }).then(function (val) {
   console.log(val);
+  var p4 = new Defer(function (resolve) {
+    setTimeout(function () {
+      resolve(val + 1);
+    }, 1000);
+  });
+  return p4
+}).then(function (val){
+  console.log(val);
+  var p4 = new Defer(function (resolve) {
+    setTimeout(function () {
+      resolve(val + 1);
+    }, 1000);
+  });
 });
 

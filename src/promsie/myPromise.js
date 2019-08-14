@@ -254,35 +254,3 @@ p6.then(x=>{
 })
 
 
-// var p1 = new MyPromise(function (resolve) {
-//   setTimeout(function () {
-//     resolve(1);
-//   }, 1000);
-// })
-
-// p1.then(function (val) {
-//   console.log(val)
-//   var p3 = new MyPromise(function (resolve) {
-//     setTimeout(function () {
-//       resolve(val + 1);
-//     }, 1000);
-//   });
-
-//   return p3;
-// }).then(function (val) {
-//   console.log(val);
-//   var p4 = new MyPromise(function (resolve) {
-//     setTimeout(function () {
-//       resolve(val + 1);
-//     }, 1000);
-//   });
-//   return p4
-// }).then(function (val){
-//   console.log(val);
-//   var p4 = new MyPromise(function (resolve) {
-//     setTimeout(function () {
-//       resolve(val + 1);
-//     }, 1000);
-//   });
-// });
-
