@@ -105,46 +105,93 @@
 
 
 
-var obj3 = {_time: new Date(0)};
-var notifier = Object.getNotifier(obj3); //获取Notifier对象
+// var obj3 = {_time: new Date(0)};
+// var notifier = Object.getNotifier(obj3); //获取Notifier对象
 
-Object.defineProperties(obj3, { //设置对象的可访问属性 
-  _time: {
-      enumerable: false,
-      configrable: false
-  },
-  seen: {
-      set: function(val) {
-          var notifier = Object.getNotifier(this);
-          notifier.notify({
-              type: 'time_updated', //定义time_updated事件
-              name: 'seen',
-              oldValue: this._time
-          });
-          this._time = val;
-      },
-      get: function() {
-          return this._time;
-      }
-  }
-});
-Object.observe(obj3, output); //为对象指定监视时调用的回调函数
-function output (changes) {
-  changes.forEach(function(change, i) {
-    console.log(change, i)
-  });
+// Object.defineProperties(obj3, { //设置对象的可访问属性 
+//   _time: {
+//       enumerable: false,
+//       configrable: false
+//   },
+//   seen: {
+//       set: function(val) {
+//           var notifier = Object.getNotifier(this);
+//           notifier.notify({
+//               type: 'time_updated', //定义time_updated事件
+//               name: 'seen',
+//               oldValue: this._time
+//           });
+//           this._time = val;
+//       },
+//       get: function() {
+//           return this._time;
+//       }
+//   }
+// });
+// Object.observe(obj3, output); //为对象指定监视时调用的回调函数
+// function output (changes) {
+//   changes.forEach(function(change, i) {
+//     console.log(change, i)
+//   });
+// }
+// obj3.seen = new Date(2013, 0, 1, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+// obj3.seen = new Date(2013, 0, 2, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+// obj3.seen = new Date(2013, 0, 3, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+// obj3.seen = new Date(2013, 0, 4, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+// obj3.seen = new Date(2013, 0, 5, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+// obj3.seen = new Date(2013, 0, 6, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+// obj3.seen = new Date(2013, 0, 7, 0, 0, 0); //触发time_updated事件
+// Object.deliverChangeRecords(output); 
+
+
+// function Observer(){
+//   var result  = null;
+//   Object.defineProperty(this, 'result',{
+//     get:function(){
+//       console.log('result');
+//       return result;
+//     },
+//     set:function(value){
+//       result = value;
+//       console.log('你设置了 result = ' + value)
+//     }
+//   })
+// }
+
+// var app = new Observer();
+
+// app.result; // result
+// app.result = 11;
+
+// object.defineProperty是 ES6新出的东西,这也是为什么vue 不支持 IE8一下的原因了。
+
+
+// 一个数据模型
+var user = {
+  id: 0,
+  name: 'Brendan Eich',
+  title: 'Mr.'
+};
+
+// 创建用户的greeting
+function updateGreeting() {
+  user.greeting = 'Hello, ' + user.title + ' ' + user.name + '!';
 }
-obj3.seen = new Date(2013, 0, 1, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
-obj3.seen = new Date(2013, 0, 2, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
-obj3.seen = new Date(2013, 0, 3, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
-obj3.seen = new Date(2013, 0, 4, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
-obj3.seen = new Date(2013, 0, 5, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
-obj3.seen = new Date(2013, 0, 6, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
-obj3.seen = new Date(2013, 0, 7, 0, 0, 0); //触发time_updated事件
-Object.deliverChangeRecords(output); 
+updateGreeting();
+
+Object.observe(user, function(changes) {
+  changes.forEach(function(change) {
+    // 当name或title属性改变时, 更新greeting
+    if (change.name === 'name' || change.name === 'title') {
+      updateGreeting();
+    }
+  });
+});
+
+

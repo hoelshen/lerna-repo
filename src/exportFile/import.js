@@ -1,3 +1,5 @@
-import {foo} from './export.js'
+import {foo} from './export.mjs/index.js'
+
 // const foo = require('./export')
-console.log('foo',foo)
+
+console.log('foo',foo())
