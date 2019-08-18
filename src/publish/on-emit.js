@@ -1,23 +1,23 @@
 const EventEmitter = require('events');
-// const EventEmitter = require('./node-v10.16.0/lib/events.js');
+const EventEmitter = require('./node-v10.16.0/lib/events.js');
 
-// const observer = new EventEmitter();
+const observer = new EventEmitter();
 
-// observer.on('topic', function(){
-//   console.log('topic has occured')
-// })
+observer.on('topic', function(){
+  console.log('topic has occured')
+})
 
-// observer.once('topic', function(msg){
-//   console.log('message: '+ msg)
-// })
+observer.once('topic', function(msg){
+  console.log('message: '+ msg)
+})
 
-// function main(){
-//   console.log('start');
-//   observer.emit('topic')
-//   console.log('end')
-// }
+function main(){
+  console.log('start');
+  observer.emit('topic')
+  console.log('end')
+}
 
-// main();
+main();
 
 
 // const EventEmitter = require('./node-v10.16.0/lib/events.js');
