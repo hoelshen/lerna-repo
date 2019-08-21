@@ -7,8 +7,17 @@
   <title>export</title>
 
   <script type="module">
-    import  foo from './export.mjs'
-    console.log('foo: ', foo());
+    import  foo3 from './export.mjs'
+
+    //引入外部模块， 重新导出
+    import  hello from './d'
+
+    console.log(hello())
+    console.log('foo: ', foo3());
+
+    import {foo} from './export.mjs';
+    console.log(foo);
+    setTimeout(() => console.log(foo), 500);
   </script>
 </head>
 <body>

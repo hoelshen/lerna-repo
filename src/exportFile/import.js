@@ -1,4 +1,4 @@
-import {foo} from './export.mjs/index.js'
+import {foo} from './export.mjs'
 
 // const foo = require('./export')
 
