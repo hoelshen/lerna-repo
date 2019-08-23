@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <iframe src="./postMessageChild.html" id="myFrame"></iframe>
+  <script >
+  
+  iframe = document.getElementById('myFrame')
+
+
+  iframe.onload = function (){
+
+    iframe.contentWindow.postMessage('MessageFromIndex1', '*')
+
+    setTimeout(()=>{
+      iframe.contentWindow.postMessage('MessageFromIndex2', '*')
+    })
+
+  }
+
+  function receiveMessageFromIframePage(event){
+    console.log('receiveMessageFromIframePage', event)
+  }
+
+  window.addEventListener('messae', receiveMessageFromIframePage, false)
+  
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

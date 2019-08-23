@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script src="./index.js"></script>
+  <!-- <script src="./index.js"></scrip÷t>
+  <script>
+    function jsonpCallback(data) {
+      alert('获得 X 数据:' + data.x);
+    }
+  </script>
+    <script src="http://127.0.0.1:3000?callback=jsonpCallback"></script> -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src="./ajax.js">
+    
+    </script> -->
+  <!-- <script src="serverproxy.js"></script> -->
+  <script>
+    // $.ajax({
+    //   url: 'http://127.0.0.1:3000/topics',
+    //   data: "",
+    //   success
+    // })
+    // $.get('http://127.0.0.1:3000/topics',function (data){
+    //   consoel.log(data)
+
+    // })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script>
+    $(function () {
+      var iosocket = io.connect('http://localhost:3000/');
+      var $ul = $("ul");
+      var $input = $("input");
+      iosocket.on('connect', function () { //接通处理
+        $ul.append($('<li>连上啦</li>'));
+        iosocket.on('message', function (message) { //收到信息处理
+          $ul.append($('<li></li>').text(message));
+        });
+        iosocket.on('disconnect', function () { //断开处理
+          $ul.append('<li>Disconnected</li>');
+        });
+      });
+
+      $input.keypress(function (event) {
+        if (event.which == 13) { //回车
+          event.preventDefault();
+          console.log("send : " + $input.val());
+          iosocket.send($input.val());
+          $input.val('');
+        }
+      });
+    });
+  </script>
 </head>
+
 <body>
-  
+  111
+
+
+  Incoming Chat:
+  <ul></ul>
+  <br/>
+  <input type="text" />
 </body>
+
 </html>
