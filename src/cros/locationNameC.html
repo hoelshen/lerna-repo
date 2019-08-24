@@ -7,10 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-ccc
+  <script>
+
+    parent.parent.location.hash = self.location.hash.substring(1);    
+    console.log('self: ', self);
+    console.log('parent.parent.location.hash: ', parent);
+
+  </script>
+
+
+cccc
 </body>
 </html>
-
-
-
-

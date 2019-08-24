@@ -11,16 +11,18 @@
     <script>
         let data = '';
         const ifr = document.createElement('iframe');
-        ifr.src = "http://localhost:5500/src/cros/window.nameB.html";
+        ifr.src = "http://127.0.0.1:5501/window.nameB.html";
         ifr.style.display = 'none';
         document.body.appendChild(ifr);
         ifr.onload = function() {
-            ifr.onload = function() {
+          ifr.onload = function() {
+              console.log('ifr。contentWindow: ', ifr.contentWindow, ifr.contentWindow.name);
                 data = ifr.contentWindow.name;
-          console.log('收到数据:', data);
+                console.log('收到数据:', data);
             }
-            ifr.src = "http://localhost:5501/src/cros/window.nameC.html";
+            ifr.src = "http://127.0.0.1:5502/src/cros/window.nameC.html";
         }
           </script>  
+1111
 </body>
 </html>
