@@ -14,3 +14,18 @@ var o2 = {
 Object.setPrototypeOf(o2, o1);
 
 o2.foo();
+
+
+// class Retctange{
+//   constructor(hight, width){
+//     this.height  = height;
+//     this.width = width;
+
+//   }
+
+// }
+
+
+// let p = new Retctange();
+
+// class Retctange{}
