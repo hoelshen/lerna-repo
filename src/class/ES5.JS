@@ -123,8 +123,9 @@ function Student(name, grade, sex) {
 // var std1 = new Student('b', 11)
 // console.log('std1.name: ', std1.name);
 // console.log('std1.grade: ', std1.grade);
-// console.log('std1.prototype: ', Student.prototype);
-// // std1.sayHello();
+// console.log('std1.prototype: ', Student.prototype)
+// console.log(std1.hasOwnProperty('name'));
+// std1.sayHello();
 
 
 //直接继承
@@ -179,8 +180,98 @@ function Student(name, grade, sex) {
 // Leo.prototype.contructor = Leo
 
 
+// var ar1 = 123;
+// var ar2 = new Object(123)
 
-var ar1 = new Array()
-console.log( typeof ar1)
-var ar2 = [];
-console.log(typeof ar2)
+// console.log(ar1 instanceof Number)
+
+//虽然用法相似，但是Object(value)与new Object(value)两者的语义是不同的，Object(value)表示将value转成一个对象，new Object(value)则表示新生成一个对象，它的值是value。
+
+// var ar2 = 123;
+// console.log(typeof ar2)
+
+
+// console.log("Object.prototype.constructor == Object", Object.prototype.constructor == Object)
+
+
+
+
+// var obj = {};
+// obj.toString();
+
+// console.log('obj', obj.prototype)
+// console.log('obj', obj)
+
+
+// var arr = [];
+// arr.push(1)
+// console.log('arr.valueOf()', arr);
+// console.log('arr.valueOf()', arr);
+// console.log('arr.valueOf()', arr);
+
+// console.log(arr.__proto_ == window.Array.prototype);
+
+
+
+
+// function Bottle() {}
+// console.log(Bottle.prototype)
+
+
+// function Bottle() {
+//   this.name = 'a';
+//   this.sayHello = function() {
+//       console.log('this.name', this.name);
+//   }
+// }
+
+// Bottle.prototype.sayIntroduce = function(){
+//   console.log('this.sayIntroduce', this.name);
+// }
+
+// var bottle1 = new Bottle();
+// var bottle2 = new Bottle();
+// console.log(Bottle.prototype.constructor == Bottle);
+
+// console.log(Object.prototype.constructor)
+
+var Obj = function() {};
+var obj1 = new Obj()
+console.log(obj1.constructor === Obj)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
