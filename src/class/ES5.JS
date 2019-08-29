@@ -237,6 +237,7 @@ function Student(name, grade, sex) {
 
 var Obj = function() {};
 var obj1 = new Obj()
+console.log(obj1)
 console.log(obj1.constructor === Obj)
 
 
