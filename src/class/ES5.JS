@@ -237,7 +237,36 @@ function Student(name, grade, sex) {
 
 var Obj = function() {};
 var obj1 = new Obj()
+console.log(obj1)
 console.log(obj1.constructor === Obj)
+
+
+    // 主人类
+    function Master() {
+      // 主人玩耍动物
+      this.feed = function(animal) {
+          console.log("主人玩耍" + animal.name);
+          console.log("类:" + animal.constructor);
+      };
+  }
+
+  // 猫类
+  function Cat(name) {
+      this.name = name;
+  }
+
+  // 狗类
+  function Dog(name) {
+      this.name = name;
+  }
+
+  var cat = new Cat("小猫咪");
+  var dog = new Dog("小狗狗");
+  var master = new Master();
+
+  master.feed(cat);
+  master.feed(dog);
+  // 这样做的优点在于Master
 
 
 
