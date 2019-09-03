@@ -235,40 +235,64 @@ function Student(name, grade, sex) {
 
 // console.log(Object.prototype.constructor)
 
-var Obj = function() {};
-var obj1 = new Obj()
-console.log(obj1)
-console.log(obj1.constructor === Obj)
+// var Obj = function() {};
+// var obj1 = new Obj()
+// console.log(obj1)
+// console.log(obj1.constructor === Obj)
 
 
-    // 主人类
-    function Master() {
-      // 主人玩耍动物
-      this.feed = function(animal) {
-          console.log("主人玩耍" + animal.name);
-          console.log("类:" + animal.constructor);
-      };
-  }
+  // 主人类
+  // function Master() {
+  //     // 主人玩耍动物
+  //     this.feed = function(animal) {
+  //         console.log("主人玩耍" + animal.name);
+  //         console.log("类:" + animal.constructor);
+  //     };
+  // }
 
   // 猫类
-  function Cat(name) {
-      this.name = name;
-  }
+  // function Cat(name) {
+  //     this.name = name;
+  // }
 
-  // 狗类
-  function Dog(name) {
-      this.name = name;
-  }
+  // // 狗类
+  // function Dog(name) {
+  //     this.name = name;
+  // }
 
-  var cat = new Cat("小猫咪");
-  var dog = new Dog("小狗狗");
-  var master = new Master();
+  // var cat = new Cat("小猫咪");
+  // var dog = new Dog("小狗狗");
+  // var master = new Master();
 
-  master.feed(cat);
-  master.feed(dog);
+  // master.feed(cat);
+  // master.feed(dog);
   // 这样做的优点在于Master
 
 
+
+
+
+  function Person(){
+    this.say = function(vocation){
+      console.log("My vocation is" , vocation.name)
+      console.log("My vocation is" , vocation.constructor)
+    }
+  }
+
+  
+  
+  function Student(){
+    this.name = name
+  }
+  
+  function Teacher(name){
+    this.name = name
+  }
+  var std = new Student('student')
+  var tea = new Teacher('teacher')
+  var per = new Person();
+  per.say(std);
+  per.say(tea);
 
 
 
