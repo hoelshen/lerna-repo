@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add es6-delegate
+  /usr/local/bin/node /usr/local/bin/yarn install
 
 PATH: 
-  /Users/sjh/.npm-global/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/sjh/flutter/bin:/Users/sjh/flutter/bin
+  /Users/sjh/.npm-global/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/sjh/.npm-global/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/sjh/flutter/bin:/Users/sjh/flutter/bin
 
 Yarn version: 
   1.17.3
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/sjh/Documents/lerna-repo/node_modules/.yarn-integrity'
+  Error: EACCES: permission denied, unlink '/Users/sjh/Documents/lerna-repo/node_modules/@babel/plugin-transform-flow-strip-types/LICENSE'
 
 npm manifest: 
   {
@@ -34,12 +34,15 @@ npm manifest:
       "@babel/node": "^7.5.5",
       "@babel/plugin-proposal-class-properties": "^7.5.5",
       "@babel/plugin-proposal-decorators": "^7.4.4",
+      "@babel/plugin-proposal-optional-chaining": "^7.2.0",
       "@babel/plugin-transform-flow-strip-types": "^7.4.4",
       "@babel/preset-env": "^7.5.5",
       "regenerator": "^0.14.2"
     },
     "dependencies": {
-      "core-decorators": "^0.20.0"
+      "core-decorators": "^0.20.0",
+      "es6-delegate": "^1.2.0",
+      "socket.io": "^2.2.0"
     }
   }
 
@@ -810,6 +813,16 @@ Lockfile:
       lodash "^4.17.13"
       to-fast-properties "^2.0.0"
   
+  "@types/estree@0.0.38":
+    version "0.0.38"
+    resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.38.tgz#c1be40aa933723c608820a99a373a16d215a1ca2"
+    integrity sha512-F/v7t1LwS4vnXuPooJQGBRKRGIoxWUTmA4VHfqjOccFsNDThD5bfUNpITive6s352O7o384wcpEaDV8rHCehDA==
+  
+  "@types/node@*":
+    version "12.7.1"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
+    integrity sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
+  
   abbrev@1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -1233,6 +1246,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.210.tgz#0ce6247366c5771d4f5663a5879388fd1adefb7e"
     integrity sha512-m1i/F+gw9jkauxDx0mOr7Sj6vp6se1mfkQNYqZb1yL5VGTp0AC1NZH5CGI6YMSO7WaScILmkKDZFG9/hlR9axQ==
   
+  element-closest@^2.0.2:
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/element-closest/-/element-closest-2.0.2.tgz#72a740a107453382e28df9ce5dbb5a8df0f966ec"
+    integrity sha1-cqdAoQdFM4LijfnOXbtajfD5Zuw=
+  
   es-abstract@^1.5.1:
     version "1.13.0"
     resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.13.0.tgz#ac86145fdd5099d8dd49558ccba2eaf9b88e24e9"
@@ -1253,6 +1271,14 @@ Lockfile:
       is-callable "^1.1.4"
       is-date-object "^1.0.1"
       is-symbol "^1.0.2"
+  
+  es6-delegate@^1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/es6-delegate/-/es6-delegate-1.2.0.tgz#57bf564e8f2c9e8985a93fb35ad972f9aa58e910"
+    integrity sha512-oFXaj3tj6A6H6Y43goIg4h6w1zTDAbc4TNvewDNwLveZDmEIZhmLLNjowMfj7C4m+pl3YcyR82Nzk//3EawXuw==
+    dependencies:
+      element-closest "^2.0.2"
+      rollup "^0.58.2"
   
   escape-string-regexp@^1.0.5:
     version "1.0.5"
@@ -2349,6 +2375,14 @@ Lockfile:
     integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
     dependencies:
       glob "^7.1.3"
+  
+  rollup@^0.58.2:
+    version "0.58.2"
+    resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.58.2.tgz#2feddea8c0c022f3e74b35c48e3c21b3433803ce"
+    integrity sha512-RZVvCWm9BHOYloaE6LLiE/ibpjv1CmI8F8k0B0Cp+q1eezo3cswszJH1DN0djgzSlo0hjuuCmyeI+1XOYLl4wg==
+    dependencies:
+      "@types/estree" "0.0.38"
+      "@types/node" "*"
   
   safe-buffer@^5.1.2:
     version "5.2.0"
