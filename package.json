@@ -24,6 +24,7 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
     "core-decorators": "^0.20.0",
     "es6-delegate": "^1.2.0",
+    "node-sass": "^4.12.0",
     "socket.io": "^2.2.0"
   }
 }
