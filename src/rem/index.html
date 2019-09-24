@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rem</title>
+  <style src='./b.css'></style>
+  <style type="text/css">
+    html{
+      font-size: 16px
+    }
+    .box{
+      width: 10rem;
+      height: 10rem;
+      background-color: red
+    }
+    .text{
+      color:#fff;
+      font-size:1rem     
+    }
+    /*
+      1rem = 3.2px
+
+   
+      170/32  170px
+    */
+
+    /* @media screen and (max-width:360px) and (min-width:321px){
+      html{
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (max-width:320px){
+      html{
+        font-size: 24px;
+      }
+    }   */
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p class="text">hello rem</p>
+  </div>
+
+  <script>
+
+    // 获取视窗宽度
+    let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+  
+    // 获取视窗高度
+    let htmlDom = document.getElementsByTagName('html')[0];
+
+    htmlDom.style.fontSize = '20px'
+
+    htmlDom.style.fontSize = htmlWidth /10 + 'px';
+
+    // rem 进阶
+    // rem 基准值的计算
+    // rem 数值计算与构建
+    // rem 与 css 结合使用
+    // rem 适配实战
+
+
+  </script>
+
+</body>
+
+</html>
