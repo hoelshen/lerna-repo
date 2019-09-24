@@ -121,20 +121,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // class Widget {
 //   constructor(snaf){
 //     this.snaf = snaf;
@@ -242,3 +228,19 @@
 
 // console.log('printName', logger.printName())
 // console.log('printName', printName())
+
+const bar = Symbol('bar');
+const baz = Symbol('baz');
+
+export default class Foo {
+  //公有方法
+  foo (baz) {
+    this[bar](baz);
+  }
+
+  //私有方法
+  [bar](baz) {
+    return this[baz] = baz;
+  }
+}
+
