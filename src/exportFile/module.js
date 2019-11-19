@@ -1,5 +1,5 @@
 
-const h5 = require('./hello')
+const h5 = require('../../hello')
 // h5.eat('兰州拉面')
 // h5.name('sjh');
 console.log(h5)
