@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>函数节流</title>
+</head>
+<body>
+    <div id='root' style="background: red;">
+       123
+    </div>
+    <button id='btn'>1111</button>
+    <script>
+        var root = document.getElementById('root');
+        var btn = document.getElementById('btn');
+
+        function reszie(){
+            console.log('offsetWidth',root.offsetWidth);
+            root.style.height = root.offsetWidth + 'px';
+            root.style.background = 'red';
+        }
+        function log(){
+          console.log('1111');
+        }
+        window.onresize = function(){
+            throttle(reszie);
+        }
+        btn.addEventListener('click',()=>{
+          throttle(log)
+        })
+        //method 要执行的函数
+        //context 在哪个作用域
+        function throttle(method,context){
+            clearTimeout(method.tId);
+            method.tId = setTimeout(function(){
+                method.call(context);
+            },1000)
+        }
+    </script>
+</body>
+</html>
